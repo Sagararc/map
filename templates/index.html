@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiple Marker using GeoJson</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        html,
+        body,
+        #map {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+    <script src="https://apis.mappls.com/advancedmaps/api/7d55803ebf97f42bd463770c7ba319a8/map_sdk?layer=vector&v=3.0&callback=initMap" defer async></script>
+</head>
+<body>
+    <div id="map"></div>
+
+    
+
+    <script>
+        var map;
+
+        function initMap() {
+            map = new mappls.Map('map', {
+                center: [28.61, 77.23],
+                zoomControl: true,
+                location: true,
+                zoom: 8
+            });
+
+            const geoData = {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "description": "SANDEEP PAN",
+                            "icon": "https://apis.mapmyindia.com/map_v3/1.png",
+                            "icon-size": 1.0, 
+                            "icon-offset": [0, -10],
+                            "text": "1",
+                            "text-size": 15,
+                            "text-offset": [0, 0.6]
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [30.2987328, 78.067219]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "description": "R.K. PAN",
+                            "icon": "https://apis.mapmyindia.com/map_v3/1.png"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [28.5832025, 77.0714271]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "description": "DELUXE PAN PALACE",
+                            "icon": "https://apis.mapmyindia.com/map_v3/1.png"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [28.5905708, 77.0574096]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "description": "LAL CHAND PAN",
+                            "icon": "https://apis.mapmyindia.com/map_v3/1.png"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [28.5922739, 77.0455358]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "description": "Sourav Pan Shop",
+                            "icon": "https://apis.mapmyindia.com/map_v3/1.png"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [28.3433827, 77.31610909999999]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "description": "BRIJESH TEA STALL",
+                            "icon": "https://apis.mapmyindia.com/map_v3/1.png"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [28.9020043, 76.5799404]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "description": "Sai Pratap Juice Corner",
+                            "icon": "https://apis.mapmyindia.com/map_v3/1.png"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [28.4308483, 77.2967206]
+                        }
+                    },
+                ]
+            };
+           
+            MultMarker = mappls.addGeoJson({
+                map: map,
+                data: geoData,
+                fitbounds: true,
+                cType: 0,
+                clusters: true,
+                popupHtml: "<style>::-webkit-scrollbar {width: 10px;} </style><div style=\"max-height:150px;min-width:200px;overflow-y: scroll;\"><h2 style=\"font: bold 16px arial helvetica\">Custom Popup</h2>" +
+                    "<p style=\"font: italic 14px/20px times\">Building looks like:</p>" +
+                    "<img style=\"width: 200px;height: 100px;\" src=\"https://www.ft.com/__origami/service/image/v2/images/raw/https%253A%252F%252Fs3-ap-northeast-1.amazonaws.com%252Fpsh-ex-ftnikkei-3937bb4%252Fimages%252F0%252F1%252F5%252F2%252F2762510-8-eng-GB%252F20170519T-CE-Info-Systems.jpg?width=700&fit=cover&gravity=faces&dpr=2&quality=medium&source=nar-cms\">"+
+                    "<p>MapmyIndia Head Office, Delhi</p>" +
+                    "<a href=\"https://www.mappls.com\">Mappls Maps</a></div>",
+            });
+        }
+    </script>
+</body>
+</html>
