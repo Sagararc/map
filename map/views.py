@@ -18,5 +18,5 @@ from django.shortcuts import render,HttpResponse
 
 
 def show_map(request):
-    locations = Location.objects.all()
+    
     return render(request, 'index.html', {'locations': locations})
