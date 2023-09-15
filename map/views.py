@@ -5,16 +5,16 @@ from .forms import LocationForm
 
 
 
-def location_input(request):
-    if request.method == 'POST':
-        form = LocationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            HttpResponse('Submitted....')
-    else:
-        form = LocationForm()
+# def location_input(request):
+#     if request.method == 'POST':
+#         form = LocationForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             HttpResponse('Submitted....')
+#     else:
+#         form = LocationForm()
 
-    return render(request, 'lat.html', {'form': form})
+#     return render(request, 'lat.html', {'form': form})
 
 
 
