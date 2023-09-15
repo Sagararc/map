@@ -1,6 +1,5 @@
 from django.shortcuts import render,HttpResponse
-from .models import Location
-from .forms import LocationForm
+
 # Create your views here.
 
 

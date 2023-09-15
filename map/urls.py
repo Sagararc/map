@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import show_map, location_input
+from .views import show_map
 
 urlpatterns = [
     # ... other patterns ...
