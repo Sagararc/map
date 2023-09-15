@@ -19,4 +19,4 @@ from django.shortcuts import render,HttpResponse
 
 def show_map(request):
     
-    return render(request, 'index.html', {'locations': locations})
+    return render(request, 'index.html')
