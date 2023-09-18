@@ -13,6 +13,11 @@
             width: 100%;
             height: 100vh;
         }
+        .rating {
+            color: gold; /* Change the color of the stars if needed */
+            font-size: 12px; /* Adjust the size of the stars if needed */
+        }
+        
     </style>
     <script src="https://apis.mappls.com/advancedmaps/api/7d55803ebf97f42bd463770c7ba319a8/map_sdk?layer=vector&v=3.0&callback=initMap" defer async></script>
 </head>
@@ -52,7 +57,7 @@
             const geoData = {
                 "type": "FeatureCollection",
                 "features": [
-                    createFeature("SANDEEP PAN", [30.2987328, 78.067219]),
+                    createFeature("SANDEEP PAN<br><span class='rating'>Ratings: &#9733;&#9733;&#9733;&#9733;&#9733;</span><br>Payment Mode: UPI/Cash<br>Timings: 18:00-02:00 <br>Parking:Available<br><span class='rating'>Location Safety Rating:&#9733;&#9733;&#9733;&#9733;&#9733;</span><br><span><a href='https://maps.google.com?q=30.2987328,78.067219' target='_blank'>Navigation</a></span>", [30.2987328, 78.067219]),
                     createFeature("R.K. PAN", [28.5832025, 77.0714271]),
                     createFeature("DELUXE PAN PALACE", [28.5905708, 77.0574096]),
                     createFeature("LAL CHAND PAN", [28.5922739, 77.0455358]),
@@ -61,6 +66,8 @@
                     createFeature("Sai Pratap Juice Corner", [28.4308483, 77.2967206]),
                 ]
             };
+            
+            
 
             MultMarker = mappls.addGeoJson({
                 map: map,
