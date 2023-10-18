@@ -1,5 +1,8 @@
 from django.shortcuts import render,HttpResponse
-
+from django.db.models.fields.files import FileField, ImageField
+from .models import FormModel
+from django.http import StreamingHttpResponse
+import csv
 # Create your views here.
 
 
@@ -61,3 +64,41 @@ def datashow(request) :
 
 def success(request):
     return render(request , 'success.html')
+
+
+class Echo:
+    """An object that implements just the write method of the file-like
+    interface.
+    """
+
+    def write(self, value):
+        """Write the value by returning it, instead of storing in a buffer."""
+        return value
+
+def export_data(request):
+    data = FormModel.objects.all()
+    model_fields = FormModel._meta.fields
+    excluded_fields = ['pwd']
+    field_names = [field.name for field in model_fields if field.name not in excluded_fields]
+
+    rows = []
+
+    for row in data:
+        new_row = []
+        for field_name in field_names:
+            value = getattr(row, field_name)
+            if isinstance(value, (FileField, ImageField)) and value:
+                value = f'http://172.105.41.115:8001{value.url}'
+            new_row.append(value)
+        rows.append(new_row)
+
+    pseudo_buffer = Echo()
+    writer = csv.writer(pseudo_buffer)
+
+    response = StreamingHttpResponse(
+        (writer.writerow(row) for row in [field_names] + rows),  
+        content_type="text/csv"
+    )
+    response['Content-Disposition'] = 'attachment; filename="data.csv"'
+
+    return response

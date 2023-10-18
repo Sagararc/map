@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import show_map,FormData,datashow,success
+from .views import show_map,FormData,datashow,success,export_data
 
 urlpatterns = [
     # ... other patterns ...
@@ -7,5 +7,6 @@ urlpatterns = [
     path('form/' , FormData , name='form'),
     path('data/' , datashow , name='data'),
     path('success/' , success , name='success'),
+    path('export/', export_data, name='export_data'),
     
 ]
