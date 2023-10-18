@@ -58,13 +58,12 @@ def FormData(request):
     return render(request , 'form.html')
 
 
-def datashow(request) : 
-    data =  FormModel.objects.all()
+def datashow(request):
+    data = FormModel.objects.all()
     paginator = Paginator(data, 10)  
     page_number = request.GET.get('page')
     data = paginator.get_page(page_number)
-    return render(request , 'data.html' , {'usr' : data})
-
+    return render(request, 'data.html', {'usr': data})
 
 def success(request):
     return render(request , 'success.html')
