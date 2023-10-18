@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body >
+    <div class="row container-fluid mt-4 justify-content-center" >
+        <div class="col-lg-12s">
+            <h2>FORM</h2>
+            <div class="card">
+                <div class="card-body">
+                   
+               
+                                <form method='POST' action="">
+
+                                    {% csrf_token %}
+                                  
+                                   
+                                    <div class="form-group row">
+                                        <div class="col-sm-4 col-form-label text-right">
+                                            <h5>Name</h5>
+                                        </div>
+                                        <div class="col-md-8 mt-2">
+                                            <input type="text" class="form-control" name="name" >
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-4 col-form-label text-right">
+                                            <h5>Mobile</h5>
+                                        </div>
+                                        <div class="col-md-8 mt-2">
+                                            <input type="text" class="form-control" name="mobile" >
+                                        </div>
+                                    </div>
+        
+                                    <div class="form-group row">
+                                        <div class="col-sm-4 col-form-label text-right">
+                                            <h5>E-Mail</h5>
+                                        </div>
+                                        <div class="col-md-8 mt-2">
+                                            <input type="text" class="form-control" name="mail" >
+                                        </div>
+                                    </div>
+        
+                                   
+                                    
+                                    <div class="form-group row">
+                                        <div class="col-sm-4 col-form-label text-right">
+                                            <h5>City</h5>
+                                        </div>
+                                        <div class="col-md-8 mt-2">
+                                            <select class="form-control" name="city">
+                                               
+                                                <option value="Chandigarh">Chandigarh</option>
+                                                <option value="Patiala">Patiala</option>
+                                                <option value="Ludhiana">Ludhiana</option>
+                                                <option value="Amritsar">Amritsar</option>
+                                                <option value="Jalandhar">Jalandhar</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    
+
+                                        <div class="form-group row">
+                                            <div class="col-sm-4 col-form-label text-right">
+                                                <h5>Count on decibel meter</h5>
+                                            </div>
+                                            <div class="col-md-8 mt-2">
+                                                <input type="text" class="form-control" name="counts" >
+                                            </div>
+                                        </div>
+                                    </div>
+        
+        
+                                    <hr>
+                                    <div class="row">
+        
+                                        <div class="col-md-12 text-right">
+        
+                                            <button type="submit"
+                                                class="btn btn-lg btn-primary waves-effect waves-light mb-2" >Submit</button>
+                                        </div>
+        
+                                    </div>
+        
+                                </form>
+        
+        
+                            </div>
+            </div>
+        </div>
+   
+      
+    </div>
+
+</body>
