@@ -3,6 +3,7 @@ from django.db.models.fields.files import FileField, ImageField
 from .models import FormModel
 from django.http import StreamingHttpResponse
 import csv
+from django.core.paginator import Paginator
 # Create your views here.
 
 
