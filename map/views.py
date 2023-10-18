@@ -59,10 +59,8 @@ def FormData(request):
 
 
 def datashow(request):
-    data = FormModel.objects.all()
-    paginator = Paginator(data, 10)  
-    page_number = request.GET.get('page')
-    data = paginator.get_page(page_number)
+    data = FormModel.objects.all().order_by('-id')
+   
     return render(request, 'data.html', {'usr': data})
 
 def success(request):
