@@ -1,5 +1,5 @@
 from django import forms
-from .models import Location
+from .models import Location, FormModel
 
 class LocationForm(forms.ModelForm):
     class Meta:
