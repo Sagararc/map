@@ -48,7 +48,7 @@ def FormData(request):
             form.instance.counts = counts
            
             form.save()
-            return redirect('')
+            return redirect('success')
         else:
             print(form.errors)   
     return render(request , 'form.html')
